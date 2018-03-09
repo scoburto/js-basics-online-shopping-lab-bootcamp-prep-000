@@ -69,6 +69,7 @@ function total() {
 
 function removeFromCart(item) {
   // write your code here
+<<<<<<< HEAD
   for (var j = 0; j < cart.length; j++) {
     var itemKey = Object.keys(cart[j])[0];
     console.log(itemKey);
@@ -79,10 +80,27 @@ function removeFromCart(item) {
     }
   }
   console.log("That item is not in your cart.");
+=======
+  var itemKey = "";
+  for (var j = 0; j < cart.length; j++) {
+    itemKey = Object.keys(cart[j]);
+    if (itemKey==='${item}') {
+      cart = cart.splice(j,1);
+      return cart;
+    }
+      
+  }
+  console.log("That item is not in your cart.");
+}
+
+function placeOrder() {
+  console.log("Sorry, we don't have a credit card on file for you.");
+>>>>>>> 8ee62a8df48104589dd1eb43862e008c4b305003
 }
 
 function placeOrder(cardNumber) {
   // write your code here
+<<<<<<< HEAD
   if (!cardNumber) {
     console.log("Sorry, we don't have a credit card on file for you.")
   }
@@ -97,3 +115,11 @@ addToCart('bananas');
 addToCart('apples');
 
 removeFromCart('bananas');
+=======
+  var msg = "Your total cost is $" + total() + ", which will be charged to the card " + [cardNumber] + "."; 
+  console.log(msg);
+  cart = [];
+}
+
+placeOrder(123456);
+>>>>>>> 8ee62a8df48104589dd1eb43862e008c4b305003
